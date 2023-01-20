@@ -6,9 +6,8 @@ type Store struct {
 }
 
 type Entry struct {
-	EntryId  int64
-	Key      string
-	Value    string
-	Category string
-	StoreId  int64
+	EntryId int64
+	Key     string
+	Value   string
+	StoreId int64
 }

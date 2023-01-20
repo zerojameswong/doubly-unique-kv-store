@@ -27,17 +27,12 @@ func StoreHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	entriesPerCategory := make(map[string][]model.Entry)
-	for _, entry := range entries {
-		entriesPerCategory[entry.Category] = append(entriesPerCategory[entry.Category], entry)
-	}
-
 	data := struct {
-		Store              model.Store
-		EntriesPerCategory map[string][]model.Entry
+		Store   model.Store
+		Entries []model.Entry
 	}{
 		*store,
-		entriesPerCategory,
+		entries,
 	}
 
 	tmp := template.Must(template.ParseFiles("templates/store.html"))

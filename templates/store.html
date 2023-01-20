@@ -8,27 +8,17 @@
 
 <body>
     <h1>{{ .Store.StoreName }}</h1>
-    <div>Jump to category:</div>
-    <ul>
-        {{ range $k, $v := .EntriesPerCategory }}
-            <a href="#{{ $k }}"><li>{{ $k }}</li></a>
-        {{ end }}
     
-    </ul>
-    
-    {{ range $k, $v := .EntriesPerCategory }}
-        <h2 id="{{ $k }}">{{ $k }}</h2>
-        <table>
-            <tbody>
-                {{ range $v }}
-                <tr>
-                    <td>{{ .Key }}</td>
-                    <td>-</td>
-                    <td>{{ .Value }}</td>
-                </tr>
-                {{ end }}
-            </tbody>
-        </table>
-    {{ end }}
+    <table>
+        <tbody>
+            {{ range .Entries }}
+            <tr>
+                <td>{{ .Key }}</td>
+                <td>-</td>
+                <td>{{ .Value }}</td>
+            </tr>
+            {{ end }}
+        </tbody>
+    </table>
 </body>
 </html>

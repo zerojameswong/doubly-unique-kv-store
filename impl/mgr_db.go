@@ -70,7 +70,7 @@ func GetEntriesForStore(storeId int64) ([]model.Entry, error) {
 	defer rows.Close()
 	for rows.Next() {
 		var e model.Entry
-		if err := rows.Scan(&e.EntryId, &e.Key, &e.Value, &e.Category, &e.StoreId); err != nil {
+		if err := rows.Scan(&e.EntryId, &e.Key, &e.Value, &e.StoreId); err != nil {
 			return nil, err
 		}
 		entries = append(entries, e)
