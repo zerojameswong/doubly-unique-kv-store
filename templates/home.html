@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+</head>
+
+<body>
+    <h1>KV Store</h1>
+    {{ range . }}
+        <a href="/stores/{{.StoreId}}">
+        <div class="row">{{ .StoreName }}</div>
+    </a>
+    {{ end }}
+</body>
+</html>
